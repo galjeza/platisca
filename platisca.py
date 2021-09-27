@@ -41,7 +41,6 @@ def login(email, password):
 
     WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.CLASS_NAME, "mojtrg")))
     print("=> prijavljen v avto.net ")
-
 def pojdiNaUredi(url):
     print("=> Pridobivam slike oglasa")
     driver.get(url)
