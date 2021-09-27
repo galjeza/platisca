@@ -53,8 +53,13 @@ def pojdiNaUredi(url):
         id = url.split("id=")[1]
         urediUrl = "https://www.avto.net/_2016mojavtonet/ad_edit.asp?id=" + id
 
-
-    imeOglasa = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH, "/html/body/div[3]/div[1]/div[1]/div/div/div[2]/h1")))
+    try:
+        imeOglasa = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH, "/html/body/div[3]/div[1]/div[1]/div/div/div[2]/h1")))
+    except:
+        imeOglasa = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH, "/html/body/div[3]/div[1]/div[1]/div/div/div[1]/h1")))
+        
+           
+    
     imeOglasa = imeOglasa.text.strip()
     imeOglasa = re.sub('[^A-Za-z0-9]+', '', imeOglasa)
 
