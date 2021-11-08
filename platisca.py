@@ -196,6 +196,13 @@ def kopirajInPrilepiPodatke(url):
                     newCheckBox.send_keys(Keys.SPACE)
 
     print("=> podatki vstavljeni v nov oglas ")
+    zadnacenacheckbox =  driver.find_elements_by_id("zadcena")
+    try:
+        if(not zadcenacheckbox.is_selected()):
+            zadcenacheckbox.click()
+    except:
+          print("zadnja cena checkbox error")
+   
 
 
 
