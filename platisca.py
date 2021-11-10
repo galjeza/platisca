@@ -136,6 +136,8 @@ def kopirajInPrilepiPodatke(url):
         innerHTML = body.get_attribute("innerHTML").replace('"','\\"')
     except:
         print("")
+    stevilo_vijakov = driver.find_element_by_id("select8").first_selected_option.text
+    
 
 
     driver.get(url)
@@ -145,6 +147,7 @@ def kopirajInPrilepiPodatke(url):
     time.sleep(5)
     driver.switch_to.alert.accept()
     time.sleep(2)
+   
 
 
 
@@ -196,12 +199,13 @@ def kopirajInPrilepiPodatke(url):
                     newCheckBox.send_keys(Keys.SPACE)
 
     print("=> podatki vstavljeni v nov oglas ")
-    zadnacenacheckbox =  driver.find_elements_by_id("zadcena")
+    zadnacenacheckbox =  driver.find_element_by_id("zadcena")
     try:
         if(not zadcenacheckbox.is_selected()):
             zadcenacheckbox.click()
     except:
-          print("zadnja cena checkbox error")
+         print("zadnja cena checkbox error")
+    driver.find_element_by_id("select8").select_by_visible_text(stevilo_vijakov)
    
 
 
