@@ -136,7 +136,7 @@ def kopirajInPrilepiPodatke(url):
         innerHTML = body.get_attribute("innerHTML").replace('"','\\"')
     except:
         print("")
-    stevilo_vijakov = driver.find_element_by_id("select8").first_selected_option.text
+    stevilo_vijakov = Select(driver.find_element_by_id("select8")).first_selected_option.text
     
 
 
