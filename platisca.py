@@ -205,7 +205,7 @@ def kopirajInPrilepiPodatke(url):
             zadcenacheckbox.click()
     except:
          print("zadnja cena checkbox error")
-    driver.find_element_by_id("select8").select_by_visible_text(stevilo_vijakov)
+    Select(driver.find_element_by_id("select8")).select_by_visible_text(stevilo_vijakov)
    
 
 
