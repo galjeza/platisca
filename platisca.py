@@ -296,9 +296,11 @@ def main():
     originalOglasWindow = driver.window_handles[0]
     try:
         login(email, geslo)
+        print("#1")
          
     except:
         WebDriverWait(driver, 10000).until(ec.visibility_of_element_located((By.NAME, "enaslov")))
+        print("#2")
         login(email, geslo)       
            
     
